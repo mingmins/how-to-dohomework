@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제하는 방법</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+
+        h1 { 
+            font-size: 700%; 
+            margin: 0%; 
+        }
+
+        p { 
+            font-weight: 100; 
+        }
+
+        .image-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .image { 
+            width: 280px; 
+            height: 280px; 
+        }
+
+        .gif, .text-on-gif {
+            display: none; /* 처음엔 보이지 않음 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .text-on-gif {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 120px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 1; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>How to do homework</h1>
+    <p>The very normal way I @do my homework@ <br> If you do it consistently in this way, <br>you will realize how to do your tasks efficiently.<br>_______________________</p>
+
+    <div class="image-container" onclick="showGIF(0)">
+        <img src="way1.png" alt="PNG 이미지 1" class="image">
+        <img id="gif0" class="gif" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcm1kZ3Y1YXZnMmFobWV2cGJvcmoyMmJzNzV0eno3N20ya2lzN25qcCZlcD12MV9pbnRlcm5naF9naWZfYnlfaWQmY3Q9Zw/FtPS6kvzFEiApsLisX/giphy.gif" alt="GIF">
+        <div id="text0" class="text-on-gif">First, go to bed quickly</div>
+    </div>
+
+    <div class="image-container" onclick="showGIF(1)">
+        <img src="way2.png" alt="PNG 이미지 2" class="image">
+        <img id="gif1" class="gif" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXA3enUxZjRkd3k2djBlZDc3ZGtidngwZmFwY2RrN2Z0ZG04eG85YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8rEiN2GsOdQTmFV38t/giphy-downsized-large.gif" alt="GIF">
+        <div id="text1" class="text-on-gif">Second, check the time</div>
+    </div>
+
+    <div class="image-container" onclick="showGIF(2)">
+        <img src="way3.png" alt="PNG 이미지 3" class="image">
+        <img id="gif2" class="gif" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHhqejR6MWdzNzVmcGllaXlmMDNzYzA2NXYyY2dxdjZydTU5ZWRqayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/100iCPYcAQx3WM/giphy.gif" alt="GIF">
+        <div id="text2" class="text-on-gif">Third, looking for friends all night together</div>
+    </div>
+
+    <div class="image-container" onclick="showGIF(3)">
+        <img src="way4.png" alt="PNG 이미지 4" class="image">
+        <img id="gif3" class="gif" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXZlNDBiOHJpZWk2bTF3eDFkczYwbHYxd3NmZTNzYzU4N2xqYXVraCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TSVTlZqG4NJAs/giphy.gif" alt="GIF">
+        <div id="text3" class="text-on-gif">Fourth, stay awake</div>
+    </div>
+
+    <div class="image-container" onclick="showGIF(4)">
+        <img src="way5.png" alt="PNG 이미지 5" class="image">
+        <img id="gif4" class="gif" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnkzZWtjOTZsaXh3MHc3cG01dWhpZGtxd2RteHJ5eXM0bGN6M2NpMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Pq5tRfjF4xEPdm5PHF/giphy.gif" alt="GIF">
+        <div id="text4" class="text-on-gif">Lastly, be satisfied with finishing my homework</div>
+    </div>
+
+    <audio id="audio0" src="sleep.mp3"></audio>
+    <audio id="audio1" src="scream.mp3"></audio>
+    <audio id="audio2" src="talk.mp3"></audio>
+    <audio id="audio3" src="awake.mp3"></audio>
+    <audio id="audio4" src="final.mp3"></audio>
+
+    <script>
+        function showGIF(index) {
+            const gifs = document.querySelectorAll('.gif');
+            const texts = document.querySelectorAll('.text-on-gif');
+            const audios = document.querySelectorAll('audio');
+
+            gifs.forEach(gif => gif.style.display = 'none');
+            texts.forEach(text => text.style.display = 'none');
+            audios.forEach(audio => {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+
+            document.getElementById('gif' + index).style.display = 'block';
+            document.getElementById('text' + index).style.display = 'flex';
+            document.getElementById('audio' + index).play();
+        }
+    </script>
+</body>
+</html>
